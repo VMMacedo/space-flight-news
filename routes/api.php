@@ -25,4 +25,7 @@ Route::prefix('v1')->group(function () {
             Route::get('me', 'me');
         });
     });
+    Route::get('/', function () {
+        return "Fullstack Challenge 2021 🏅 - Space Flight News";
+    });
 });
