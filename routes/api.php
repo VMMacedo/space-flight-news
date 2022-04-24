@@ -16,6 +16,8 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::prefix('v1')->group(function () {
+
+    /**Rota de autenticação */
     Route::prefix('auth')->group(function () {
         Route::controller(AuthController::class)->group(function () {
             Route::post('login', 'login');
@@ -25,7 +27,17 @@ Route::prefix('v1')->group(function () {
             Route::get('me', 'me');
         });
     });
+
+    /**Rota para retorno de status 200 - Space Flight News */
     Route::get('/', function () {
         return "Fullstack Challenge 2021 🏅 - Space Flight News";
     });
+
+    /**Rota para API Events */
+    Route::group([
+        'middleware' => 'auth:api'
+    ], function ($router) {
+        
+    });
+    
 });
