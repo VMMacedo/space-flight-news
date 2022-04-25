@@ -34,8 +34,7 @@ Route::prefix('v1')->group(function () {
         return "Fullstack Challenge 2021 🏅 - Space Flight News";
     });
 
-    /**Rotas API Contas Gateway */
-
+    /**Rotas API Articles */
     Route::apiresource('articles', ArticleController::class, [
         'names' => [
             'store' => 'storeArticlessApi',
@@ -43,7 +42,6 @@ Route::prefix('v1')->group(function () {
             'show' => 'showArticlesApi',
             'update' => 'updateArticlesApi',
             'destroy' => 'destroyArticlesApi'
-
         ]
     ]);
 });
