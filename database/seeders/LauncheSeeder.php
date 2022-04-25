@@ -19,7 +19,7 @@ class LauncheSeeder extends Seeder
 
         for ($i=1; $i < 51; $i++) { 
             DB::table('launches')->insert([
-                'id' => $i,
+                'id' => $faker->uuid(),
                 'provider' => $faker->paragraph(),
                 'created_at' => $faker->date('Y-m-d H:i:s'),
                 'updated_at' => $faker->date('Y-m-d H:i:s')

@@ -23,8 +23,8 @@ return new class extends Migration
             $table->dateTimeTz("publishedAt");
             $table->dateTimeTz("updatedAt");
             $table->boolean("featured");
-            $table->foreignId("events_id");
-            $table->foreignId("launches_id");
+            $table->foreignId("events_id")->nullable();
+            $table->uuid("launches_id")->nullable();
             $table->timestamps();
 
             $table->foreign('events_id')->references('id')->on('events');
