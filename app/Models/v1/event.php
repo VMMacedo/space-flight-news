@@ -9,3 +9,7 @@ class event extends Model
 {
     use HasFactory;
 }
+
+
+
+

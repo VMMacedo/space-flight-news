@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -33,11 +34,16 @@ Route::prefix('v1')->group(function () {
         return "Fullstack Challenge 2021 🏅 - Space Flight News";
     });
 
-    /**Rota para API Events */
-    Route::group([
-        'middleware' => 'auth:api'
-    ], function ($router) {
-        
-    });
-    
+    /**Rotas API Contas Gateway */
+
+    Route::apiresource('articles', ArticleController::class, [
+        'names' => [
+            'store' => 'storeArticlessApi',
+            'index' => 'indexArticlesApi',
+            'show' => 'showArticlesApi',
+            'update' => 'updateArticlesApi',
+            'destroy' => 'destroyArticlesApi'
+
+        ]
+    ]);
 });
